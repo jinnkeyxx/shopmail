@@ -33,6 +33,6 @@
    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9" type="dce833e722648dd985e0f2b9-text/javascript"></script>
     <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.css">
-   <link rel="stylesheet" href="./mvc/view/asstes.toastr.css">
-    <script src="./mvc/view/assets/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" integrity="sha512-6S2HWzVFxruDlZxI3sXOZZ4/eJ8AcxkQH1+JjSe/ONCEqR9L4Ysq5JdT5ipqtzU7WHalNwzwBv+iE51gNHJNqQ==" crossorigin="anonymous" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous"></script>
 </head>

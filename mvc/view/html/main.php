@@ -1,6 +1,6 @@
 <body>
     <?php if(!isset($_SESSION['username'])){ ?>
-    <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="shadow-sm navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
         </div>
     </nav>
     <?php } else { ?>
-    <nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="shadow-sm navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,9 +28,9 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="/payment"><i class="fas fa-money-bill-alt"></i> Nạp tiền</a>
-                </li>
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="nap-tien"><i class="fas fa-money-bill-alt"></i> Nạp tiền</a>
+                </li> -->
                 <li class="nav-item active">
                     <a class="nav-link" href="/transfer-money"><i class="fas fa-wallet"></i> Chuyển tiền</a>
                 </li>
@@ -50,10 +50,21 @@
                             Random</a>
                     </div>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/account-info"><i class="fas fa-info-circle"></i> Thông tin tài khoản</a>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link" href="info"><i class="fas fa-info-circle"></i> Thông tin tài khoản</a>
                 </li>
-
+                <?php $admin = $db->total("SELECT * FROM `users` WHERE `username` = '{$_SESSION['username']}' ");
+                if($admin['role'] == 1){
+                ?>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button"
+                            aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i>Admin</a>
+                    <div class="dropdown-menu" style="">
+                        <a class="dropdown-item" href="admin-add-mail"><i class="fas fa-info-circle"></i>Thêm Mail</a>
+                        <a class="dropdown-item" href="admin-type-mail"><i class="fas fa-info-circle"></i>Thêm Loại Mail</a>
+                    </div>
+                </li>
+                <?php } ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="https://forms.gle/3DK2Cjvzpga12akq5" target="_blank"><i
                             class="fas fa-bug"></i> Báo lỗi</a>

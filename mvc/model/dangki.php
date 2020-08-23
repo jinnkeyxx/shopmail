@@ -25,7 +25,7 @@ elseif($password !== $repassword){
     $messages = "Mật khẩu không trùng nhau";
 }
 else {
-    $add = $db->insert('users' , array('user' => $username , 'password' => $password , 'active' => 0 , 'date' => $date , 'name' => $fullname) );
+    $add = $db->insert('users' , array('username' => $username , 'password' => $password , 'active' => 0 , 'date' => $date , 'name' => $fullname , 'sodu' => 0) );
     if($add){
         $status = 0;
         $messages = "đăng kí thành công , xin vui lòng đợi chuyển hướng";
