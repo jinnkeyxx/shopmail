@@ -198,6 +198,16 @@ $('#soluong').keyup(()=> {
     let soluong = $('#soluong').val();
     tien = parseFloat(tien);
     let tong = soluong * type;
-    $('#tongthanhtoan').text(tong);
+    $('#tongthanhtoan').text(tong + ` VNĐ`);
+    
+})
+$('select#loai').change(()=> {
+    let type = $("select#loai option:checked" ).val();
+    let  tien = $('#tongthanhtoan').text();
+    type = parseFloat(type);
+    let soluong = $('#soluong').val();
+    tien = parseFloat(tien);
+    let tong = soluong * type;
+    $('#tongthanhtoan').text(tong + ` VNĐ`);
     
 })
